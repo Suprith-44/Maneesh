@@ -24,6 +24,11 @@ st.markdown(f"""
         background-position: center;
         background-color: black; /* Set background color to black */
         color: white; /* Set text color to white */
+        animation: fadeOut 3s forwards; /* Apply fade out animation */
+    }}
+    @keyframes fadeOut {{
+        0% {{ opacity: 1; }}
+        100% {{ opacity: 0; }}
     }}
     @keyframes rainbow {{
       0% {{color: red;}}
@@ -60,13 +65,15 @@ def display_typing_effect(text, delay=0.2):
         time.sleep(delay)
 
 # Delay for 3 seconds to display the image
-time.sleep(2)
+time.sleep(3)
 
 # Remove the background image after 3 seconds
 st.markdown("""
     <style>
     .stApp {
-    background-image: none;
+        background-image: none;
+        opacity: 1; /* Ensure the main content is visible */
+        animation: none; /* Stop the fade out animation */
     }
     </style>
     """, unsafe_allow_html=True)
