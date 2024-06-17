@@ -19,9 +19,11 @@ encoded_image = base64.b64encode(image_bytes).decode()
 st.markdown(f"""
     <style>
     .stApp {{
-    background-image: url("data:image/jpeg;base64,{encoded_image}");
-    background-size: cover;
-    background-position: center;
+        background-image: url("data:image/jpeg;base64,{encoded_image}");
+        background-size: cover;
+        background-position: center;
+        background-color: black; /* Set background color to black */
+        color: white; /* Set text color to white */
     }}
     @keyframes rainbow {{
       0% {{color: red;}}
